@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'; 
 
-const Header = ({ search }) => {
+const Header = ({ search, filter }) => {
     const [value, setValue] = useState('');
 
     return (
@@ -22,7 +22,7 @@ const Header = ({ search }) => {
                     placeholder='Cocktail name' 
                 />
                 <button onClick={() => search(value)}>Search</button>
-                <select>
+                <select onChange={(e) => filter(e.target.value)}>
                     <option value="All">All</option>
                     <option value="Alcoholic">Alcoholic</option>
                     <option value="Non_Alcoholic">None Alcoholic</option>

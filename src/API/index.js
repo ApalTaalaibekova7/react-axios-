@@ -13,6 +13,12 @@ export const cocktailsAPI = {
     },
     getByName(name) {
         return instance.get(`search.php?s=${name}`)
+    },
+    getByFilter(value) {
+        return instance.get(`filter.php?a=${value}`)
+    },
+    getDetail(id) {
+        return instance.get(`lookup.php?i=${id}`)
     }
     
 }
