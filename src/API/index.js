@@ -19,6 +19,9 @@ export const cocktailsAPI = {
     },
     getDetail(id) {
         return instance.get(`lookup.php?i=${id}`)
+    },
+    getIngredient(name) {
+        return instance.get(`search.php?i=${name}`)
     }
     
 }

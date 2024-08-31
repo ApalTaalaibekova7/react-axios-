@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { cocktailsAPI } from '../../API';
 import './Detail.css';
 const Detail = () => {
@@ -23,6 +23,18 @@ const Detail = () => {
         return <div className="loading">Loading...</div>; 
     }
 
+    const getIngredients = () => {
+        const arr = []
+        for (let key in cocktail) {
+            if ( key.includes('strIngredient') && cocktail[key] !== null) {
+                arr.push(cocktail[key])
+            }
+        }
+        return arr;
+      
+        
+    }
+
     return (
         <div className="detailContainer">
             <h1 className="detailTitle">{cocktail.strDrink}</h1>
@@ -38,7 +50,16 @@ const Detail = () => {
             <p className="detailInfo"><strong>Alcoholic:</strong> {cocktail.strAlcoholic}</p>
             <p className="detailInfo"><strong>Instructions:</strong> {cocktail.strInstructions}</p>
             <p className="detailInfo"><strong>Glass:</strong> {cocktail.strGlass}</p>
-            <p className="detailInfo"><strong>Ingredient:</strong> {cocktail.strIngredient1}</p>
+
+            { getIngredients().length > 0 && 
+                <ol  className="ingredientsList">
+                    {
+                        getIngredients().map((el, i) => (
+                            <li key={i}><Link to={`/ingredient/${el}`}>{el}</Link></li>
+                        ))
+                    }
+                </ol>
+            }
         </div>
     );
 };

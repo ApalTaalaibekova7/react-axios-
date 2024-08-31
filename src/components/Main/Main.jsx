@@ -11,7 +11,7 @@ const Main = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/detail/:name/:id' element={<Detail />} />
-                <Route path='ingredient' element={<Ingredient />} />
+                <Route path='ingredient/:name' element={<Ingredient />} />
                 <Route path='*' element={<NotFount />} />
             </Routes>
         </div>
