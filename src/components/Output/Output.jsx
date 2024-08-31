@@ -5,7 +5,7 @@ const Output = ({ data }) => {
     return (
         <div className="outputContainer">
             {
-                data.length > 0 ? 
+                data.length >= 0 ? 
                     data.map(el => (
                         <div key={el.idDrink} className="card">
                             <img 

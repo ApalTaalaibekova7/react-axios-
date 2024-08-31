@@ -10,8 +10,7 @@ const Header = ({ search }) => {
             <Link to={'/'} className="logo">
                 <img 
                     width={100} 
-                    src="https://img.freepik.com/premium-vector/cocktail-glass-logo-vector-set-template-cocktail-glass-logo-vector-set-elements-cocktail-glass_938396-402.jpg" 
-                    alt="logo" 
+                    src="https://img.freepik.com/premium-vector/cocktail-glass-logo-vector-set-template-cocktail-glass-logo-vector-set-elements-cocktail-glass_938396-402.jpg"alt="logo" 
                 />
                 <h1 className="title">Cocktails | React</h1>
             </Link>
