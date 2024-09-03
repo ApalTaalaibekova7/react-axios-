@@ -13,8 +13,8 @@ const Home = () => {
     // Добавила рандом
     const getRandomCocktail = async () => {
         try {
-            const response = await cocktailsAPI.getRandom();
-            const randomCocktail = response.data.drinks[0];
+            const res = await cocktailsAPI.getRandom();
+            const randomCocktail = res.data.drinks[0];
             // console.log('Random Cocktail:', randomCocktail);
             setData([randomCocktail]); 
         } catch (error) {
