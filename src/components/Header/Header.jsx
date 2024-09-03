@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'; 
 
-const Header = ({ search, filter }) => {
+const Header = ({ search, filter, getRandom }) => {
     const [value, setValue] = useState('');
 
     return (
@@ -27,6 +27,7 @@ const Header = ({ search, filter }) => {
                     <option value="Alcoholic">Alcoholic</option>
                     <option value="Non_Alcoholic">None Alcoholic</option>
                 </select>
+                <button onClick={() => getRandom()}>Random</button> 
             </div>
         </div>
     );

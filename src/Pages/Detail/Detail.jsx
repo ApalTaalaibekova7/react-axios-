@@ -31,8 +31,6 @@ const Detail = () => {
             }
         }
         return arr;
-      
-        
     }
 
     return (

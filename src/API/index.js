@@ -22,6 +22,9 @@ export const cocktailsAPI = {
     },
     getIngredient(name) {
         return instance.get(`search.php?i=${name}`)
+    },
+    getRandom() {
+        return instance.get(`random.php`)
     }
     
 }

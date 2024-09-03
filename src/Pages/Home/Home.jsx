@@ -10,6 +10,18 @@ const Home = () => {
         setData(res.data.drinks);
     }
 
+    // Добавила рандом
+    const getRandomCocktail = async () => {
+        try {
+            const response = await cocktailsAPI.getRandom();
+            const randomCocktail = response.data.drinks[0];
+            // console.log('Random Cocktail:', randomCocktail);
+            setData([randomCocktail]); 
+        } catch (error) {
+            console.error('Error fetching random cocktail:', error);
+        }
+    };
+    
     const getCocktailsByName = async (value) => {
         const res = await cocktailsAPI.getByName(value)
         res.data.drinks ? setData(res.data.drinks) : setData([])
@@ -29,7 +41,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <Header filter={filter} search={getCocktailsByName} />
+            <Header filter={filter} getRandom={getRandomCocktail} search={getCocktailsByName} />
             <Output data={data}/>
         </div>
     );
